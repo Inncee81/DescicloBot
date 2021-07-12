@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx npm@7 install && npx node@16.4.0 ./index.js --trace-warnings"
+    "start": "npx node@16.4.0 ./index.js --trace-warnings"
   },
   "keywords": [],
   "author": "",
