@@ -1,0 +1,21 @@
+{
+	"name": "%/0/",
+	"input": "N/A",
+
+	"base": [
+		{
+			"input": { "vagabunda": 1, "é": 1, "uma": 1 },
+			"output": { "puta que não faz nada da vida": 1, "grande fonte de sexo anal, oral, vegetal e nasal": 1}
+		},
+
+		{
+			"input": { "puta": 1, "é": 1, "uma": 1 },
+			"output": { "mulher que da o cu na esquina": 1, "baiana com pouca grana. Ganha a vida fazendo sexo oral.": 1 }
+		},
+
+		{
+			"input": { "teu": 1, "cu": 1, "é": 1},
+			"output": { "vermelho.": 1, "grande como um buraco negro": 1, "aberto, pois eu abri-o.": 1, "mais enrugado que uma velha na banheira.": 1, "negro.": 1}
+		}
+	]
+}

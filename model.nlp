@@ -1,0 +1,338 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "nlu": {
+      "useNoneFeature": false
+    },
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager",
+      "useNoneFeature": false
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "useNoneFeature": false,
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,bund,da,de,dias,e,marginal,os,que,tip,tod,um,vagabund": {
+            "intent": "vagabunda",
+            "domain": "default"
+          },
+          "da,e,frut,kib,muit,que,re,uma,voc": {
+            "intent": "kibe",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "vagabunda": "default",
+          "kibe": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "vagabunda é um tipo de marginal que dá a bunda todos os dias.",
+            "intent": "vagabunda"
+          },
+          {
+            "domain": "default",
+            "utterance": "kibe é uma fruta que você dá muita ré",
+            "intent": "kibe"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "vagabund": 1,
+              "e": 1,
+              "um": 1,
+              "tip": 1,
+              "de": 1,
+              "marginal": 1,
+              "que": 1,
+              "da": 1,
+              "a": 1,
+              "bund": 1,
+              "tod": 1,
+              "os": 1,
+              "dias": 1,
+              "kib": 1,
+              "uma": 1,
+              "frut": 1,
+              "voc": 1,
+              "muit": 1,
+              "re": 1
+            },
+            "intents": {
+              "vagabunda": 1,
+              "kibe": 1
+            },
+            "intentFeatures": {
+              "vagabunda": {
+                "vagabund": 1,
+                "e": 1,
+                "um": 1,
+                "tip": 1,
+                "de": 1,
+                "marginal": 1,
+                "que": 1,
+                "da": 1,
+                "a": 1,
+                "bund": 1,
+                "tod": 1,
+                "os": 1,
+                "dias": 1
+              },
+              "kibe": {
+                "kib": 1,
+                "e": 1,
+                "uma": 1,
+                "frut": 1,
+                "que": 1,
+                "voc": 1,
+                "da": 1,
+                "muit": 1,
+                "re": 1
+              }
+            },
+            "featuresToIntent": {
+              "vagabund": [
+                "vagabunda"
+              ],
+              "e": [
+                "vagabunda",
+                "kibe"
+              ],
+              "um": [
+                "vagabunda"
+              ],
+              "tip": [
+                "vagabunda"
+              ],
+              "de": [
+                "vagabunda"
+              ],
+              "marginal": [
+                "vagabunda"
+              ],
+              "que": [
+                "vagabunda",
+                "kibe"
+              ],
+              "da": [
+                "vagabunda",
+                "kibe"
+              ],
+              "a": [
+                "vagabunda"
+              ],
+              "bund": [
+                "vagabunda"
+              ],
+              "tod": [
+                "vagabunda"
+              ],
+              "os": [
+                "vagabunda"
+              ],
+              "dias": [
+                "vagabunda"
+              ],
+              "kib": [
+                "kibe"
+              ],
+              "uma": [
+                "kibe"
+              ],
+              "frut": [
+                "kibe"
+              ],
+              "voc": [
+                "kibe"
+              ],
+              "muit": [
+                "kibe"
+              ],
+              "re": [
+                "kibe"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "useNoneFeature": false,
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "vagabund",
+                "e",
+                "um",
+                "tip",
+                "de",
+                "marginal",
+                "que",
+                "da",
+                "a",
+                "bund",
+                "tod",
+                "os",
+                "dias",
+                "kib",
+                "uma",
+                "frut",
+                "voc",
+                "muit",
+                "re"
+              ],
+              "intents": [
+                "vagabunda",
+                "kibe"
+              ],
+              "perceptrons": [
+                [
+                  1.2368961572647095,
+                  0.5700240731239319,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  0.5700240731239319,
+                  0.5700240731239319,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  1.2368961572647095,
+                  -0.4886854588985443,
+                  -0.4886854588985443,
+                  -0.4886854588985443,
+                  -0.4886854588985443,
+                  -0.4886854588985443,
+                  -0.4886854588985443,
+                  0.28184717984191365
+                ],
+                [
+                  -0.48838385939598083,
+                  1.0818499326705933,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  1.0818499326705933,
+                  1.0818499326705933,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  -0.48838385939598083,
+                  1.7481614351272583,
+                  1.7481614351272583,
+                  1.7481614351272583,
+                  1.7481614351272583,
+                  1.7481614351272583,
+                  1.7481614351272583,
+                  0.5455366911284482
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "vagabunda é um tipo de marginal que dá a bunda todos os dias."
+      ],
+      [
+        "pt",
+        "kibe é uma fruta que você dá muita ré"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "vagabunda": [
+          {
+            "answer": "Além disso é uma puta que não faz nada da vida."
+          }
+        ],
+        "puta": [
+          {
+            "answer": "mulher que da o cu na esquina"
+          }
+        ],
+        "None": [
+          {
+            "answer": "RIP"
+          },
+          {
+            "answer": "ligou"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

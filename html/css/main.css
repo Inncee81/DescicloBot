@@ -1,0 +1,13 @@
+body {
+	background: var(--body-background);
+	color: var(--body-color);
+}
+
+.collection-item {
+	background: var(--component-background) !important;
+}
+
+.collection {
+	border: 0;
+	border-radius: 5px;
+}
