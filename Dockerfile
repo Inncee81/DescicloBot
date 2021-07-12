@@ -1,3 +1,4 @@
+FROM npm
 RUN npm -v
 RUN node -v
 
