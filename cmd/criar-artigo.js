@@ -1,7 +1,7 @@
 var Global = require("../Global.js");
 const Markov = require('markov-strings').default;
-var brain = require("brain.js");
-const net = new brain.NeuralNetwork();
+/*var brain = require("brain.js");
+const net = new brain.NeuralNetwork();*/
 
 //palavra no final da primeira frase + primeira palavra da segunda frase
 var textGlue = [
@@ -57,12 +57,14 @@ var words = [
   	{ input: { "si": 1 }, output: { pron: 1 } },
   	{ input: { "consigo": 1 }, output: { pron: 1 } },
   	{ input: { "conosco": 1 }, output: { pron: 1 } },
-  	{ input: { "convosco": 1 }, output: { pron: 1 } },
-  	{ input: { "": 1 }, output: { pron: 1 } },
+  	{ input: { "convosco": 1 }, output: { pron: 1 } }
 ];
 
 module.exports = {
 	show: async (msg,m) => {
+		msg.channel.send("ninguém usa essa merda até eu limpar a memória do bot!");
+		return false;
+		
 		try {
 			var WikiAI = require("../configs/wikiai.json");
 

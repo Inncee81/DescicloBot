@@ -5,14 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js --trace-warnings"
+    "start": "npx npm@7 install && npx node@16.4.0 ./index.js --trace-warnings"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@rodrigogs/xvideos": "^1.2.0",
+    "brain.js": "^2.0.0-beta.2",
+    "discord.js": "^13.0.0-dev.a8984bc.1626048234",
+    "express": "^4.17.1",
+    "firebase": "^8.7.1",
+    "follow-redirects": "^1.14.1",
+    "jsdom": "^16.6.0",
+    "markov-strings": "^3.0.1",
     "node": "^16.4.0",
     "npm": "^7.19.0",
-    "discord.js": "github:discordjs/discord.js"
+    "reddit": "^1.2.1",
+    "request": "^2.88.2",
+    "somememe": "^1.0.2",
+    "xmlhttprequest": "^1.8.0",
+    "xvideos": "0.0.4"
   }
 }
