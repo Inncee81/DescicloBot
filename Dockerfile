@@ -1,4 +1,8 @@
-FROM npm
+FROM node:latest
+WORKDIR ~/proj/DescicloBot
+
+COPY package*.json ./
+
 RUN npm -v
 RUN node -v
 
