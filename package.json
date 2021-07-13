@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "npm": "7.18.1"
+  },
   "dependencies": {
     "@rodrigogs/xvideos": "^1.2.0",
     "brain.js": "^2.0.0-beta.2",
@@ -21,7 +24,7 @@
     "jsdom": "^16.6.0",
     "markov-strings": "^3.0.1",
     "node": "^16.4.0",
-    "npm": "^7.19.0",
+    "npm": "^7.18.1",
     "reddit": "^1.2.1",
     "request": "^2.88.2",
     "somememe": "^1.0.2",
