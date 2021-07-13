@@ -4,6 +4,7 @@
  * 
  * Logo após ele inicializa o Bot e os comandos.
  */
+require("dotenv").config();
 const express = require('express');
 const path = require('path');
 const Command = require('./Command');
@@ -16,6 +17,7 @@ const DatabaseUtils = require("./utils/DatabaseUtils.js");
 var firebase = require('firebase/app');
 require('firebase/auth');
 require('firebase/database');
+
 //
 const Markov = require('markov-strings').default;
 
