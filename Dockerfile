@@ -1,5 +1,5 @@
 FROM node:latest
-WORKDIR ~/proj/DescicloBot
+WORKDIR /
 
 COPY package*.json ./
 
