@@ -77,7 +77,7 @@ module.exports = {
 
 			net.train(words);
 
-			const markov = new Markov({ stateSize: 3 });
+			const markov = new Markov({ stateSize: 2 });
 
 			const options = {
 				maxTries: 20, // Give up if I don't have a sentence after 20 tries (default is 10)
@@ -141,7 +141,7 @@ module.exports = {
 					if (lkey == "conj") {
 						var Name = title.replaceAll("_", "");
 						Name = Name[0].toUpperCase() + Name.slice(1);
-						result[result.length] = Name + "% " + conj + " " + pretext;
+						result[result.length] = Name + " " + conj + " " + pretext;
 					} else if (lkey == "none") {
 						var Name = title.replaceAll("_", "");
 						Name = Name[0].toUpperCase() + Name.slice(1);
@@ -151,14 +151,18 @@ module.exports = {
 
 						var xxx = Math.floor(Math.random() * (prons.length - 1));
 
-						var pron = prons[xxx].input[0].toUpperCase() + prons[xxx].input.slice(1);
+						console.log(prons[xxx]);
+
+						var pron = prons[xxx].input;
 						console.log(pron);
 
 						for (key in pron) {
 							pron = key[0] + key.slice(1);
 						}
 
-						result[result.length] = pron + "& " + Name + " " + pretext;
+						pron = pron[0].toUpperCase() + pron.slice(1);
+
+						result[result.length] = pron + " " + Name + " " + pretext;
 					} else if (lkey == "pron") {
 
 					}
@@ -177,12 +181,12 @@ module.exports = {
 							conj = key;
 						}
 
-						result[result.length] = conj + "@ " + pretext;
+						result[result.length] = conj + " " + pretext;
 					} else if (fkey == "none") {
-						result[result.length - 1] += ".#";
+						result[result.length - 1] += ".";
 						result[result.length] = pretext;
 					} else if (fkey == "conj") {
-						result[result.length - 1] += ",$";
+						result[result.length - 1] += ",";
 						result[result.length] = pretext;
 					}
 				}

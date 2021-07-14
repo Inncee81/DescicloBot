@@ -261,13 +261,12 @@ module.exports = {
 					try {
 						var cmd = require(`./cmd/${cmd_nick}.js`);
 
-						cmd.show(msg,m);
+						cmd.show(msg, m);
+						delete require.cache[require.resolve(`./cmd/${cmd_nick}.js`)];
 					} catch (err) {
 						console.log(err);
 						msg.channel.send("O comando não existe ou está bugado, meu chapa!");
 					}
-					
-					delete require.cache[require.resolve(`./cmd/${cmd_nick}.js`)];
 				}
 		}
 	},
