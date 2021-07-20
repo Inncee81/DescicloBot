@@ -14,7 +14,7 @@ module.exports = {
 				return msg.channel.send("Você precisa ir a uma clínica para tratar a sua esquisofrenia.");
 			}
 
-			if (account.hasPermission("BAN_MEMBERS")) {
+			if (!account.permissions.has("BAN_MEMBERS")) {
 				return msg.reply("Eu não vou kickar esse cara, séloko."); //Eu não tenho permissão pra isso, **me dá agora ou eu muto todo mundo!!**
 			}
 

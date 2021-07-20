@@ -24,6 +24,7 @@
     "follow-redirects": "^1.14.1",
     "jsdom": "^16.6.0",
     "markov-strings": "^3.0.1",
+    "mimir": "^0.0.1",
     "node": "^16.4.0",
     "npm": "^7.18.1",
     "reddit": "^1.2.1",

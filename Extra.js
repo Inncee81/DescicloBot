@@ -28,46 +28,5 @@ module.exports = {
 
 			msg.channel.send("<@!" + msg.author.id + `>, até mais!\n\n${link[Math.floor(Math.random() * (link.length))]}`)
 		}
-	},
-
-	checkMute: function(msg) {
-		let muted = msg.guild.roles.cache.get('543499663806824497').members.map(m=>m.user.tag);
-		let colosseum = Global.client.channels.cache.get("815406995250479164");
-
-		if (muted.length == 0) {
-			colosseum.permissionOverwrites.set([{
-				id: "311359153807294465",
-				deny: [
-					"SEND_MESSAGES"
-				]
-			}, {
-				id: "543499663806824497",
-				deny: [
-					"SEND_MESSAGES"
-				]
-			}, {
-				id: msg.guild.roles.everyone.id,
-				deny: [
-					"VIEW_CHANNEL"
-				]
-			}],"Apedrejamento fechado devido a nenhum usuário castigado.");
-		} else {
-			colosseum.permissionOverwrites.set([{
-				id: "311359153807294465",
-				allow: [
-					"SEND_MESSAGES"
-				]
-			}, {
-				id: "543499663806824497",
-				deny: [
-					"SEND_MESSAGES"
-				]
-			}, {
-				id: msg.guild.roles.everyone.id,
-				deny: [
-					"VIEW_CHANNEL"
-				]
-			}],"Apedrejamento fechado devido a nenhum usuário castigado.");
-		}
 	}
 }

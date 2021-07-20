@@ -66,7 +66,7 @@ function model(json,nsfw) {
 			title: "Ouch!",
 			selftext: "O subreddit não foi encontrado ou está privado.",
 			subreddit: "404",
-			permalink: "https://xvideos.com",
+			permalink: "r/xvideos",
 			author: "Uma vadia qualquer",
 			ups: -2,
 			downs: 430239
@@ -77,7 +77,7 @@ function model(json,nsfw) {
 	r.setThumbnail(ico);
 	r.setAuthor(`r/${data.subreddit}`);
 	r.setTitle(data.title);
-	r.setURL(`https://reddit.com${data.permalink}`);
+	r.setURL(`https://reddit.com/${data.permalink}`);
 	//caso tenha texto
 	if (data.selftext) {
 		r.setDescription(data.selftext);

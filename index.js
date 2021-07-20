@@ -156,7 +156,7 @@ client.on('messageCreate', async function(msg) {
 		Global.dpLinkExecuted = true;
 	}
 
-	Extra.checkMute(msg);
+	//Extra.checkMute(msg);
 	
 	console.log("────────────────");
 });

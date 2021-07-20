@@ -1,0 +1,152 @@
+//
+
+		msg.channel.send("ninguém mexe nessa porra além de mim!");
+		return 0;
+		var titulo = m[2];
+		var message = msg.content.replace("dp!criar-artigo ", "").replace(m[1] + " ", "").toLowerCase().split(" ");
+		msg.channel.send("Treinando AI...").then(() => {
+			/*var treino = dados.map(function (pair) {
+				return {
+					input: pair[0],
+					output: vec_result(pair[1], 10)
+				};
+			});*/
+			try {
+				var filé = fs.readFileSync(process.cwd() + "/memoria.json");
+				ai = ai.fromJSON(JSON.parse(filé));
+			} catch (err) {
+				console.log(err)
+			}
+
+			ai.train([
+				/*"Ele também pediu pra ela parar de participar de gangbangs com nigerianos, o que ela aceitou mesmo contrariada.",
+				"fazer sexo selvagem em áreas preservadas",
+				"que querem fantasiar melhor no momento de sexo solitário",
+
+				"é o carro mais adequado para todo e qualquer estudante",
+				"é um carro que a Chevrolet criou pra quem não é nem rico, nem pobre",
+
+				"era uma cidade-estado da Grécia antiga",
+				"uma grande cidade com vasta produção de mangas e habitadas por viados",
+				"é uma cidade que cheira a esgoto",
+
+				"por Kim Jong-Un, a nossa citação é",
+				"Em 2012 se casou com seu cafetão, Toni Arrombas.",
+				"O BOLSONARO TEVE HEMORRAGIA NO CU",
+
+				"é um daqueles chefões opcionais filhos da puta",
+				"é um jogo com gráficos extremamente realistas",
+				"mas depois de conseguirem todos os objetivos contra os jogadores do oriente e vencerem o jogo por massacre",
+
+				"e fez muito sucesso nos Estados Unidos, vendendo 4 cópias desde seu lançamento.",*/
+				/*{input:"os brinquedos de Kim Jong Un usam tecnologia de funções picantes", output: "mas apenas para uso anal."},
+				{input: "a carroça, um veículo amplamente difundido principalmente em cidades do interior.", output: "Também é o meio de transporte mais barato, eficaz e versátil que já foi criado pelo homem."},
+
+				{input:"principalmente na propaganda do Dollynho", output: "onde a garrafa pet faz sinais obscenos para a câmera."},
+				{input:"queria assistir a Galinha Pintadinha", output: "mas sua mãe não deixou por conter sangue e violência."},
+				{input:"é um EP (alienês: broxado)", output: "de Guerra nas Estrelas que"},
+				{input:"começou a falar numa linguagem incompreensível", output: ". Alguns dizem que é uma linguagem utilizada pelo próprio capeta"},*/
+
+				/*"O Linux é o primeiro sistema operacional comunista do mundo autorizado a entrar legalmente nos Estados Unidos e outros países da OPEP",
+				"Muitas pessoas utilizam esse sistema inofensivo e não sabem que a Microsoft é responsável por inúmeros crimes no mundo inteiro",
+				"Software segundo aquele técnico ladrão que vai à sua casa, liga o PC e fica olhando pra ele como uma viúva no caixão e depois ainda cobra uma fortuna por isso inventando algum problema e deixando outro pra na outra semana vir consertar.",*/
+
+				{
+					input: [216, "#", 811, "#", 109, "#", 811, "#", 177, "#", 811, "#", 217, "#", 811, "#", 200, "#", 811, "#", 011, "#", 811, "#", 218], //racistas contra pessoas verdes como o piccolo
+					output: [813, "#", 811, "#", 011, "#", 811, "#", 012, "#", 811, "#", 028, "#", 811, "#", 037, "#", 811, "#", 797, "#", 811, "#", 818, "#", 812],  //, o que é um tanto inusitado.
+				},
+				{
+					input: [028, "#", 813, "#", 811, "#", 076, "#", 811, "#", 219, "#", 811, "#", 220], //é, por incrivel que pareça
+					output: [811, "#", 819, "#", 811, "#", 177, "#", 811, "#", 178] // as pessoas utilizam
+				},
+				//
+				{
+					input: [221, 811, 222, 814], //quanta criatividade!
+					output: [811, "#", 816, "#", 813, "#", 811, "#", 817, "#", 811, "#", 322, "#", 811, "#", -1, "#", 812, "#", 812, "#", 812] // enfim, voltando ao (artigo)...
+				}
+			], {
+				iterations: 100,
+				log: true,
+				logPeriod: 1,
+				timeout: 60000
+			});
+
+			var input = new Array();
+			var new_message = [];
+
+			for (var x = 0; x < message.length; x++) {
+				console.log("I: ", x, message.length - 1);
+				for (var key in palavras) {
+					var k = key;
+					var final = "";
+
+					if (message[x].endsWith(".")) {
+						k = message[x].replace(".","");
+						final = ".";
+					} else if (message[x].endsWith(",")) {
+						k = message[x].replace(",", "");
+						final = ",";
+					}
+
+					if (palavras[k] == message[x]) {
+						if (x != message.length - 1) {
+							input[input.length] = k;
+							input[input.length] = "#";
+							input[input.length] = 811;
+							input[input.length] = "#";
+						} else {
+							input[input.length] = k;
+						}
+					}
+
+					if (final == ".") {
+						if (x != message.length - 1) {
+							input[input.length] = 812;
+							input[input.length] = "#";
+						} else {
+							input[input.length] = 812;
+						}
+					} else if (final == ",") {
+						if (x != message.length - 1) {
+							input[input.length] = 813;
+							input[input.length] = "#";
+						} else {
+							input[input.length] = 813;
+						}
+					}
+				}
+			}
+
+			console.log("input", input);
+			var respostaC = "";
+			var output = input;
+			for (var y = 0; y < 20; y++) {
+				var resultado = ai.run(output).split("#"); //mimir.bow(message,dicionario)
+				console.log("resultado:", resultado);
+				var resposta = "";
+				output = output.concat(resultado);
+
+				for (var x = 0; x < resultado.length; x++) {
+					console.log(`R: ${resultado[x]}`);
+					if (resultado[x] == -1) {
+						resposta += titulo;
+					} else {
+						if (palavras[resultado[x]]) {
+							resposta += palavras[resultado[x]];
+						}
+					}
+				}
+				respostaC += resposta;
+			}
+			var json = ai.toJSON();
+
+			fs.writeFileSync(process.cwd() + "/memoria.json", JSON.stringify(json, null, 2));
+
+			msg.channel.send(`${msg.content.replace("dp!criar-artigo ", "").replace(m[1] + " ", "")}${respostaC}`); //${theme_keys[maxarg(resultado)]}
+
+		});
+
+===========
+  AI DATA
+===========
+

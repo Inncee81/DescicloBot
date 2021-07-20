@@ -1,17 +1,9 @@
-const http = require('follow-redirects').https;
 const Discord = require('discord.js');
 
 const Global = require('./Global');
-const AI = require('./AI');
 const Help = require("./cmd/help");
-const MinhaPica = require("./cmd/minha-pica");
 const XVideos = require("./cmd/xvideos");
-const Ban = require("./cmd/ban");
-const Kick = require("./cmd/ban");
 const Regras = require("./cmd/regras");
-const Reddit = require("./cmd/reddit");
-const Ensinar = require("./cmd/ensinar");
-const Debug = require("./cmd/debug");
 //const Avatar = require("./cmd/avatar"); em teste
 
 const p = "╚prefix╚";
@@ -184,15 +176,6 @@ module.exports = {
 
 					let castigado = m[1].replace('<', "").replace('>', "").replace('@', "").replace('!', "");
 					let account = msg.guild.members.cache.get(castigado);
-					let colosseum = Global.client.channels.cache.get("815406995250479164");
-
-					colosseum.overwritePermissions([{
-						id: "311359153807294465",
-						deny: [
-							"SEND_MESSAGES"
-						]
-					}],"Apedrejamento aberto devido a um usuário castigado.");
-					//msg.guild.members.cache.get
 
 					account.roles.add("543499663806824497").catch(console.error);
 					account.roles.remove("311359153807294465").catch(console.error);
